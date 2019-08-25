@@ -4,8 +4,6 @@ import com.base.client.CompartmentClient;
 import com.base.connection.BaseConnection;
 import com.base.list.ListConnection;
 import com.model.child.Compartment;
-import com.model.child.Engine;
-import com.model.child.Seat;
 import javafx.collections.ObservableList;
 
 import java.sql.*;

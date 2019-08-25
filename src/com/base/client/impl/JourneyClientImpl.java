@@ -4,8 +4,6 @@ import com.base.client.JourneyClient;
 import com.base.connection.BaseConnection;
 import com.base.list.ListConnection;
 import com.model.child.Commuter;
-import com.model.child.Engine;
-import com.model.child.Journey;
 import javafx.collections.ObservableList;
 
 import java.sql.*;

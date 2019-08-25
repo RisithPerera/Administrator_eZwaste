@@ -5,13 +5,11 @@
  */
 package com.view.ctrl;
 
-import com.base.client.impl.CommuterClientImpl;
 import com.base.client.impl.JourneyClientImpl;
 import com.manifest.Data;
 import com.manifest.Message;
 import com.manifest.View;
 import com.model.child.Commuter;
-import com.model.child.Journey;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,7 +21,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;

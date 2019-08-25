@@ -3,9 +3,6 @@ package com.base.client.impl;
 import com.base.client.TicketClient;
 import com.base.connection.BaseConnection;
 import com.base.list.ListConnection;
-import com.model.child.Journey;
-import com.model.child.Reservation;
-import com.model.child.Ticket;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;

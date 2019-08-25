@@ -1,14 +1,10 @@
 package com.view.ctrl;
 
-import com.base.client.impl.CompartmentClientImpl;
 import com.base.client.impl.ReservationClientImpl;
 import com.base.client.impl.SeatClientImpl;
 import com.base.client.impl.TicketClientImpl;
 import com.manifest.Data;
 import com.model.child.Compartment;
-import com.model.child.Reservation;
-import com.model.child.Seat;
-import com.model.child.Ticket;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,7 +18,6 @@ import javafx.scene.layout.*;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 

@@ -4,9 +4,6 @@ import com.base.client.ReservationClient;
 import com.base.connection.BaseConnection;
 import com.base.list.ListConnection;
 import com.model.child.Commuter;
-import com.model.child.Journey;
-import com.model.child.Reservation;
-import com.model.child.Seat;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;

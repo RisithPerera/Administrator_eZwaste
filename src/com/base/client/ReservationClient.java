@@ -7,8 +7,6 @@ package com.base.client;
 
 
 import com.model.child.Commuter;
-import com.model.child.Journey;
-import com.model.child.Reservation;
 import javafx.collections.ObservableList;
 import java.sql.SQLException;
 
