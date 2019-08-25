@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="960.0" style="-fx-background-color: #75F7EB;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.view.ctrl.JourneyAddCtrl">
+   <children>
+      <HBox layoutX="2.0" layoutY="43.0" spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="38.0">
+         <children>
+            <VBox maxWidth="550.0" prefHeight="200.0" prefWidth="550.0" spacing="5.0" style="-fx-background-color: #409EC4;" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label maxHeight="1.7976931348623157E308" text="Train Name : " textFill="#3b377e" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="trainNameText" editable="false" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="204.0" promptText="**********" />
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #3B377E;">
+                     <children>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="25.0" style="-fx-background-color: #1C154B;" text="Departure Details" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="17.0" />
+                           </font>
+                        </Label>
+                        <GridPane hgap="5.0" vgap="5.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="164.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="5.0" prefWidth="27.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="307.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" text="Station " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label maxHeight="1.7976931348623157E308" text="Platform " textFill="WHITE" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="depPlatformText" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="204.0" promptText="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label maxHeight="1.7976931348623157E308" text=":" textFill="WHITE" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label maxHeight="1.7976931348623157E308" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="depStationCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" promptText="Select A Station" GridPane.columnIndex="2" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </GridPane>
+                        <Region prefHeight="20.0" />
+                        <HBox prefWidth="25.0" spacing="5.0">
+                           <children>
+                              <ComboBox fx:id="depYearCombo" prefHeight="25.0" prefWidth="80.0" promptText="Year" />
+                              <ComboBox fx:id="depMonthCombo" prefHeight="25.0" prefWidth="120.0" promptText="Month" />
+                              <ComboBox fx:id="depDayCombo" prefHeight="25.0" prefWidth="70.0" promptText="Day" />
+                              <Region maxWidth="20.0" HBox.hgrow="ALWAYS" />
+                              <ComboBox fx:id="depHourCombo" prefHeight="27.0" prefWidth="84.0" promptText="Hour" />
+                              <TextField fx:id="depMinuteText" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="80.0" promptText="Minute" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" style="-fx-background-color: #3B377E;">
+                     <children>
+                        <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="25.0" style="-fx-background-color: #1C154B;" text="Arrival Details" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="17.0" />
+                           </font>
+                        </Label>
+                        <GridPane hgap="5.0" vgap="5.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="164.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="5.0" prefWidth="27.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="307.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" text="Station " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label maxHeight="1.7976931348623157E308" text="Platform " textFill="WHITE" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="arrPlatformText" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="204.0" promptText="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label maxHeight="1.7976931348623157E308" text=":" textFill="WHITE" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label maxHeight="1.7976931348623157E308" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="arrStationCombo" maxWidth="1.7976931348623157E308" prefHeight="25.0" promptText="Select A Station" GridPane.columnIndex="2" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </GridPane>
+                        <Region prefHeight="20.0" />
+                        <HBox prefWidth="25.0" spacing="5.0">
+                           <children>
+                              <ComboBox fx:id="arrYearCombo" prefHeight="25.0" prefWidth="80.0" promptText="Year" />
+                              <ComboBox fx:id="arrMonthCombo" prefHeight="25.0" prefWidth="120.0" promptText="Month" />
+                              <ComboBox fx:id="arrDayCombo" prefHeight="25.0" prefWidth="70.0" promptText="Day" />
+                              <Region maxWidth="20.0" HBox.hgrow="ALWAYS" />
+                              <ComboBox fx:id="arrHourCombo" prefHeight="27.0" prefWidth="84.0" promptText="Hour" />
+                              <TextField fx:id="arrMinuteText" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="27.0" prefWidth="80.0" promptText="Minute" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="BOTTOM_RIGHT" spacing="5.0">
+                     <children>
+                        <Button defaultButton="true" layoutX="355.0" layoutY="376.0" mnemonicParsing="false" onAction="#saveBtnEvent" prefHeight="27.0" prefWidth="88.0" styleClass="btn" text="Save" />
+                        <Button fx:id="cancelBtn" defaultButton="true" layoutX="454.0" layoutY="376.0" mnemonicParsing="false" onAction="#cancelBtnEvent" prefHeight="27.0" prefWidth="88.0" styleClass="btn" text="Cancel" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
+            </VBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="1.7976931348623157E308" prefViewportHeight="400.0" prefViewportWidth="615.0" HBox.hgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="trainVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#viewJourneyEvent" prefHeight="24.0" text="View Journeys" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+   </children>
+</AnchorPane>
