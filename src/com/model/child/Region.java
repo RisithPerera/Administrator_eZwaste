@@ -10,7 +10,10 @@ public class Region extends SuperModel implements Comparable<Region> {
     private int id;
     private String vertex;
 
-    public Region() {
+    public Region() {}
+
+    public Region(int id) {
+        this.id = id;
     }
 
     public Region(int id, String vertex) {

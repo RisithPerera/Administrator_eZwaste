@@ -14,6 +14,10 @@ public class Gateway extends SuperModel implements Comparable<Gateway> {
     public Gateway() {
     }
 
+    public Gateway(int id) {
+        this.id = id;
+    }
+
     public Gateway(int id, double latitude, double longitude) {
         this.id = id;
         this.latitude = latitude;

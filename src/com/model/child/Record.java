@@ -6,156 +6,62 @@ import com.model.superb.SuperModel;
 
 import java.util.Objects;
 
-public class Record extends SuperModel implements Comparable<Record>{
-    private int id;
-    private String fName;
-    private String lName;
-    private String street;
-    private String city;
-    private String district;
-    private String password;
-    private String contact;
-    private int regionId;
-    private double reputation;
+public class Record extends SuperModel {
+
+    private String recordDT;
+    private int dustbinId;
+    private double level;
 
     public Record() {}
 
-    public Record(int id) {
-        this.id = id;
+    public Record(String recordDT, int dustbinId, double level) {
+        this.recordDT = recordDT;
+        this.dustbinId = dustbinId;
+        this.level = level;
     }
 
-    public Record(int id, String fName, String lName, String street, String city, String district, String password, String contact, int regionId, double reputation) {
-        this.id = id;
-        this.fName = fName;
-        this.lName = lName;
-        this.street = street;
-        this.city = city;
-        this.district = district;
-        this.password = password;
-        this.contact = contact;
-        this.regionId = regionId;
-        this.reputation = reputation;
+    public String getId(){
+        return recordDT + Symbol.SPLIT + dustbinId;
+    }
+    public String getRecordDT() {
+        return recordDT;
     }
 
-    public int getId() {
-        return id;
+    public void setRecordDT(String recordDT) {
+        this.recordDT = recordDT;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getDustbinId() {
+        return dustbinId;
     }
 
-    public String getFName() {
-        return fName;
+    public void setDustbinId(int dustbinId) {
+        this.dustbinId = dustbinId;
     }
 
-    public void setFName(String fName) {
-        this.fName = fName;
+    public double getLevel() {
+        return level;
     }
 
-    public String getLName() {
-        return lName;
-    }
-
-    public void setLName(String lName) {
-        this.lName = lName;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public int getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(int regionId) {
-        this.regionId = regionId;
-    }
-
-    public double getReputation() {
-        return reputation;
-    }
-
-    public void setReputation(double reputation) {
-        this.reputation = reputation;
+    public void setLevel(double level) {
+        this.level = level;
     }
 
     //---------------------------- Calculatons -------------------------------------//
-   
-    public String getFullName() {
-        return fName + " " + lName;
-    }
-    
-    public String getIdFullName() {
-        return id+" - "+fName + " " + lName;
-    }
-    
-    public String getAddress() {
-        return street + ",\n" + city+ ",\n" + district;
-    }
 
-    //---------------------------- Override Methods -------------------------------------//
+    //---------------------------- Override Methods --------------------------------//
     
     @Override
     public String toString() {
-        return  getId()       + Symbol.SPLIT +
-                getFName()    + Symbol.SPLIT +
-                getLName()    + Symbol.SPLIT +
-                getStreet()   + Symbol.SPLIT +
-                getCity()     + Symbol.SPLIT +
-                getDistrict() + Symbol.SPLIT +
-                getPassword() + Symbol.SPLIT +
-                getContact()  + Symbol.SPLIT +
-                getReputation();
-    }      
-
-    @Override
-    public int compareTo(Record dto) {
-        boolean logic = dto.getId() > this.getId();
-        return  logic ? -1 : !logic ? 1 : 0;
+        return  getRecordDT()  + Symbol.SPLIT +
+                getDustbinId() + Symbol.SPLIT +
+                getLevel();
     }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Record) {
-            return ((Record)obj).getId() == this.getId();
+            return this.getId().equals(((Record) obj).getId());
         }
         return false;
     }

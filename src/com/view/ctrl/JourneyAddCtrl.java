@@ -5,10 +5,6 @@
  */
 package com.view.ctrl;
 
-import com.base.client.impl.CompartmentClientImpl;
-import com.base.client.impl.EngineClientImpl;
-import com.base.client.impl.JourneyClientImpl;
-import com.base.client.impl.StationClientImpl;
 import com.manifest.Data;
 import com.manifest.Message;
 import com.manifest.View;

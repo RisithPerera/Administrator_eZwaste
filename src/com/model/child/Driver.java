@@ -8,12 +8,13 @@ import java.util.Objects;
 
 public class Driver extends SuperModel implements Comparable<Driver>{
     private int id;
+    private String username;
+    private String password;
     private String fName;
     private String lName;
     private String street;
     private String city;
     private String district;
-    private String password;
     private String contact;
     private int regionId;
     private double reputation;
@@ -24,14 +25,15 @@ public class Driver extends SuperModel implements Comparable<Driver>{
         this.id = id;
     }
 
-    public Driver(int id, String fName, String lName, String street, String city, String district, String password, String contact, int regionId, double reputation) {
+    public Driver(int id, String username, String password, String fName, String lName, String street, String city, String district, String contact, int regionId, double reputation) {
         this.id = id;
+        this.username = username;
+        this.password = password;
         this.fName = fName;
         this.lName = lName;
         this.street = street;
         this.city = city;
         this.district = district;
-        this.password = password;
         this.contact = contact;
         this.regionId = regionId;
         this.reputation = reputation;
@@ -43,6 +45,22 @@ public class Driver extends SuperModel implements Comparable<Driver>{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFName() {
@@ -83,14 +101,6 @@ public class Driver extends SuperModel implements Comparable<Driver>{
 
     public void setDistrict(String district) {
         this.district = district;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getContact() {
@@ -141,7 +151,6 @@ public class Driver extends SuperModel implements Comparable<Driver>{
                 getStreet()   + Symbol.SPLIT +
                 getCity()     + Symbol.SPLIT +
                 getDistrict() + Symbol.SPLIT +
-                getPassword() + Symbol.SPLIT +
                 getContact()  + Symbol.SPLIT +
                 getReputation();
     }      

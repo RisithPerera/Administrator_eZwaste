@@ -7,7 +7,6 @@ package com.base.list;
 
 
 import com.model.child.*;
-import com.model.child.Commuter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -19,26 +18,20 @@ public class ListConnection {
 
     private static ListConnection listConnection;
 
-    private final ObservableList<Commuter> commuterList;
-    private final ObservableList<Compartment> compartmentList;
-    private final ObservableList<Engine> engineList;
-    private final ObservableList<Journey> journeyList;
-    private final ObservableList<Officer> officerList;
-    private final ObservableList<Reservation> reservationList;
-    private final ObservableList<Seat> seatList;
-    private final ObservableList<Station> stationList;
-    private final ObservableList<Ticket> ticketList;
+    private final ObservableList<Driver> driverList;
+    private final ObservableList<Dustbin> dustbinList;
+    private final ObservableList<Gateway> gatewayList;
+    private final ObservableList<Record> recordList;
+    private final ObservableList<Region> regionList;
+    private final ObservableList<User> userList;
 
     private ListConnection() {
-        this.commuterList = FXCollections.observableArrayList();
-        this.compartmentList = FXCollections.observableArrayList();
-        this.engineList = FXCollections.observableArrayList();
-        this.journeyList = FXCollections.observableArrayList();
-        this.officerList = FXCollections.observableArrayList();
-        this.reservationList = FXCollections.observableArrayList();
-        this.seatList = FXCollections.observableArrayList();
-        this.stationList = FXCollections.observableArrayList();
-        this.ticketList = FXCollections.observableArrayList();
+        this.driverList = FXCollections.observableArrayList();
+        this.dustbinList = FXCollections.observableArrayList();
+        this.gatewayList = FXCollections.observableArrayList();
+        this.recordList = FXCollections.observableArrayList();
+        this.regionList = FXCollections.observableArrayList();
+        this.userList = FXCollections.observableArrayList();
 
     }
 
@@ -49,39 +42,11 @@ public class ListConnection {
         return listConnection;
     }
 
-    public ObservableList<Commuter> getCommuterList() {
-        return commuterList;
-    }
+    public ObservableList<Driver> getDriverList() {return driverList;}
+    public ObservableList<Dustbin> getDustbinList() {return dustbinList;}
+    public ObservableList<Gateway> getGatewayList() {return gatewayList;}
+    public ObservableList<Record> getRecordList() {return recordList;}
+    public ObservableList<Region> getRegionList() {return regionList;}
+    public ObservableList<User> getUserList() {return userList;}
 
-    public ObservableList<Compartment> getCompartmentList() {
-        return compartmentList;
-    }
-
-    public ObservableList<Engine> getEngineList() {
-        return engineList;
-    }
-
-    public ObservableList<Journey> getJourneyList() {
-        return journeyList;
-    }
-
-    public ObservableList<Officer> getOfficerList() {
-        return officerList;
-    }
-
-    public ObservableList<Reservation> getReservationList() {
-        return reservationList;
-    }
-
-    public ObservableList<Seat> getSeatList() {
-        return seatList;
-    }
-
-    public ObservableList<Station> getStationList() {
-        return stationList;
-    }
-
-    public ObservableList<Ticket> getTicketList() {
-        return ticketList;
-    }
 }

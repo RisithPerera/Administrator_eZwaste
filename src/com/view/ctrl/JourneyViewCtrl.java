@@ -5,7 +5,6 @@
  */
 package com.view.ctrl;
 
-import com.base.client.impl.JourneyClientImpl;
 import com.manifest.Data;
 import com.manifest.Message;
 import com.manifest.View;

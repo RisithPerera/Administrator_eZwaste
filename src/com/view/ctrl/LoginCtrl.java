@@ -1,6 +1,5 @@
 package com.view.ctrl;
 
-import com.base.client.impl.OfficerClientImpl;
 import com.main.Main;
 import com.manifest.Message;
 import com.manifest.View;

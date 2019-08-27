@@ -12,15 +12,13 @@ package com.manifest;
 
 public interface Data {
 
-    public static final String COMMUTER = "Commuter";
-    public static final String COMPARTMENT = "Compartment";
-    public static final String ENGINE = "Engine";
-    public static final String JOURNEY = "Journey";
-    public static final String OFFICER = "Officer";
-    public static final String RESERVATION = "Reservation";
-    public static final String SEAT = "Seat";
-    public static final String STATTON = "Station";
-    public static final String TICKET = "Ticket";
+    public static final String DRIVER = "Driver";
+    public static final String DUSTBIN = "Dustbin";
+    public static final String GATEWAY = "Gateway";
+    public static final String RECORD = "Record";
+    public static final String REGION = "Region";
+    public static final String USER = "User";
+
 
     public static final int COMPARTMENT_SEAT_ROW_COUNT = 16;
     public static final int COMPARTMENT_SEAT_COL_COUNT = 4;

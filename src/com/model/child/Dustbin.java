@@ -16,6 +16,10 @@ public class Dustbin extends SuperModel implements Comparable<Dustbin>{
     public Dustbin() {
     }
 
+    public Dustbin(int id) {
+        this.id = id;
+    }
+
     public Dustbin(int id, double latitude, double longitude, int regionId, int gatewayId) {
         this.id = id;
         this.latitude = latitude;

@@ -1,8 +1,5 @@
 package com.view.ctrl;
 
-import com.base.client.impl.ReservationClientImpl;
-import com.base.client.impl.SeatClientImpl;
-import com.base.client.impl.TicketClientImpl;
 import com.manifest.Data;
 import com.model.child.Compartment;
 import javafx.beans.value.ChangeListener;
