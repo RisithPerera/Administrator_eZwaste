@@ -5,6 +5,7 @@
  */
 package com.main;
 
+import com.base.client.GatewayClient;
 import com.base.client.impl.*;
 import com.manifest.View;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.server.Server;
 import javafx.application.Application;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +32,9 @@ public class Main extends Application {
     private Thread timeThread;
     public static Stage primaryStage;
     public static Task<Void> timeTask;
-    
+    private static final int NODE_PORT = 3030;
+    private static final int APP_PORT = 3032;
+
     @Override
     public void start(Stage stage){
 
@@ -60,17 +64,17 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        new Server().start();
         initializeDatabase();
         launch(args);
     }
     
     public static void initializeDatabase(){
         try {
-            CommuterClientImpl.getInstance().loadAll();
-            StationClientImpl.getInstance().loadAll();
-            EngineClientImpl.getInstance().loadAll();
-            JourneyClientImpl.getInstance().loadAll();
-            ReservationClientImpl.getInstance().loadAll();
+            DriverClientImpl.getInstance().loadAll();
+            DustbinClientImpl.getInstance().loadAll();
+            GatewayClientImpl.getInstance().loadAll();
+            RegionClientImpl.getInstance().loadAll();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

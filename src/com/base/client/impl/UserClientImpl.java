@@ -50,46 +50,26 @@ public class UserClientImpl implements UserClient {
 
     @Override
     public boolean delete(User user) throws SQLException, ClassNotFoundException {
+        if (user == null) return false;
         String query = "DELETE FROM User WHERE username = "+ user.getUserName();
         Connection conn = BaseConnection.createConnection().getConnection();
         PreparedStatement state = conn.prepareStatement(query);
         return (state.executeUpdate() > 0);
     }
 
+
     @Override
-    public User search(String username)throws SQLException, ClassNotFoundException {
-        String query = "SELECT * FROM User WHERE username"+ username;
+    public User getUser(String userName, String password) throws SQLException, ClassNotFoundException {
+        String query = "SELECT * FROM User WHERE userName LIKE '"+userName+"' AND userPassword LIKE '"+password+"'";
         Connection conn = BaseConnection.createConnection().getConnection();
-        Statement state = conn.createStatement();
-        ResultSet result = state.executeQuery(query);
-        User user = new User();
-        while (result.next()) {
-            user.setUserName(result.getString("userName"));
-            user.setUserPassword(result.getString("userPassword"));
-        }
-        return user;
-    }
-
-    @Override
-    public ObservableList<User> getAll() {
-        return userList;
-    }
-
-    @Override
-    public void loadAll() throws SQLException, ClassNotFoundException {
-        userList.clear();
-        String query = "SELECT * FROM User";
-        Connection conn = BaseConnection.createConnection().getConnection();
-        Statement state = conn.createStatement();
-        ResultSet result = state.executeQuery(query);
-
-        while (result.next()) {
+        PreparedStatement state = conn.prepareStatement(query);
+        ResultSet result = state.executeQuery();
+        if (result.next()) {
             User user = new User();
             user.setUserName(result.getString("userName"));
             user.setUserPassword(result.getString("userPassword"));
-            userList.add(user);
-
+            return user;
         }
-        System.out.println("User List Loaded : " + userList.size());
+        return null;
     }
 }

@@ -1,22 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.view.ctrl;
 
-import com.base.client.impl.CommuterClientImpl;
+import com.model.child.Driver;
+import com.base.client.impl.DriverClientImpl;
 import com.manifest.Data;
 import com.manifest.Message;
-import com.manifest.View;
-import com.model.child.Commuter;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
@@ -34,43 +26,37 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author RISITH-PC
- */
-public class CommuterViewCtrl implements Initializable {
+
+public class DriverViewCtrl implements Initializable {
 
     @FXML
-    private TableView<Commuter> commuterTable;
+    private TableView<Driver> driverTable;
     
     @FXML
-    private TableColumn<Commuter, String> idCol,  nameCol, addressCol, contactsCol, pointsCol;
+    private TableColumn<Driver, String> idCol,  nameCol, addressCol, contactsCol, pointsCol;
 
     @FXML
-    private TextField searchCommuterText;
+    private TextField searchDriverText;
    
-    private ObservableList<Commuter> commuterList;
+    private ObservableList<Driver> driverList;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        System.out.println("rrrrrrrr");
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("fullName"));
         addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
         contactsCol.setCellValueFactory(new PropertyValueFactory<>("contact"));
         pointsCol.setCellValueFactory(new PropertyValueFactory<>("reputation"));
 
-        commuterList = CommuterClientImpl.getInstance().getAll();
-        commuterTable.getItems().setAll(commuterList);
-            // TODO
+        driverList = DriverClientImpl.getInstance().getAll();
+        driverTable.getItems().setAll(driverList);
 
-        
-        searchCommuterText.textProperty().addListener(
+        searchDriverText.textProperty().addListener(
             new ChangeListener() {
                 @Override
                 public void changed(ObservableValue observable, Object oldVal, Object newVal) {
-                    searchCommuter((String)oldVal, (String)newVal);
+                    searchDriver((String)oldVal, (String)newVal);
                 }
             }
         );
@@ -78,15 +64,15 @@ public class CommuterViewCtrl implements Initializable {
         setTableMenu();
     }    
 
-    private void searchCommuter(String oldText, String newText) {
+    private void searchDriver(String oldText, String newText) {
         if ( oldText != null && (newText.length() < oldText.length()) ) {
-            commuterTable.getItems().setAll(commuterList);
+            driverTable.getItems().setAll(driverList);
         }
          
         String[] parts = newText.toUpperCase().split(" ");
 
-        ObservableList<Commuter> subentries = FXCollections.observableArrayList();
-        for(Commuter entry: commuterTable.getItems()){
+        ObservableList<Driver> subentries = FXCollections.observableArrayList();
+        for(Driver entry: driverTable.getItems()){
             boolean match = true;
             for ( String part: parts ) {
                 if ( ! entry.toString().toUpperCase().contains(part) ) {
@@ -99,37 +85,37 @@ public class CommuterViewCtrl implements Initializable {
                 subentries.add(entry);
             }
         }
-        commuterTable.getItems().setAll(subentries);
+        driverTable.getItems().setAll(subentries);
     }   
     
     private void setTableMenu() {
-        commuterTable.setRowFactory((TableView<Commuter> tableView) -> {
-            TableRow<Commuter> row = new TableRow<>();
+        driverTable.setRowFactory((TableView<Driver> tableView) -> {
+            TableRow<Driver> row = new TableRow<>();
             ContextMenu contextMenu = new ContextMenu();
-            MenuItem viewMenu = new MenuItem("View Reservations");
-            MenuItem deleteMenu = new MenuItem("Delete Commuter");
+            MenuItem viewMenu = new MenuItem("View Route");
+            MenuItem deleteMenu = new MenuItem("Delete Driver");
 
             /*
             viewMenu.setOnAction((ActionEvent event) -> {                         
                 try{    
-                    Commuter selectedCommuter = commuterTable.getSelectionModel().getSelectedItem();
+                    Driver selectedDriver = driverTable.getSelectionModel().getSelectedItem();
                     //CustomerOrderViewCtrl ctrl = (CustomerOrderViewCtrl) MainCtrl.getInstance().showContent(String.format(View.PATH, View.RESERVATION_VIEW));
-                    //ctrl.updateTableDataByCustomer(selectedCommuter);
+                    //ctrl.updateTableDataByCustomer(selectedDriver);
                 } catch (IOException ex) {
-                    Logger.getLogger(CommuterViewCtrl.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DriverViewCtrl.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
             */
 
             deleteMenu.setOnAction((ActionEvent event) -> {                         
                 try {
-                    Commuter selectedCommuter = commuterTable.getSelectionModel().getSelectedItem();
-                    if (CommuterClientImpl.getInstance().delete(selectedCommuter.getId())) {
-                        MessageBoxViewCtrl.display(Message.TITLE,String.format(Message.DELETE, Data.COMMUTER));
+                    Driver selectedDriver = driverTable.getSelectionModel().getSelectedItem();
+                    if (DriverClientImpl.getInstance().delete(selectedDriver.getId())) {
+                        MessageBoxViewCtrl.display(Message.TITLE,String.format(Message.DELETE, Data.DRIVER));
                     }else{
-                        MessageBoxViewCtrl.display(Message.TITLE,String.format(Message.UNSUCESS, Data.COMMUTER));
+                        MessageBoxViewCtrl.display(Message.TITLE,String.format(Message.UNSUCESS, Data.DRIVER));
                     }
-                    commuterTable.getItems().setAll(CommuterClientImpl.getInstance().getAll());
+                    driverTable.getItems().setAll(DriverClientImpl.getInstance().getAll());
                 } catch (SQLException e) {
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {

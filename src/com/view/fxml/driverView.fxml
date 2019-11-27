@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,11 +13,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="960.0" style="-fx-background-color: #75F7EB;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.view.ctrl.CommuterViewCtrl">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="960.0" style="-fx-background-color: #75F7EB;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.view.ctrl.DriverViewCtrl">
    <children>
       <HBox layoutX="2.0" layoutY="43.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="43.0">
          <children>
-            <TableView fx:id="commuterTable" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="driverTable" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                <columns>
                   <TableColumn fx:id="idCol" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Id" />
                   <TableColumn fx:id="nameCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="Name" />
@@ -27,15 +31,11 @@
             </TableView>
             <Label maxHeight="1.7976931348623157E308">
                <graphic>
-                  <ImageView fitHeight="600.0" fitWidth="300.0" pickOnBounds="true">
-                     <image>
-                        <Image url="/com/view/image/CommuterArt.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fitHeight="600.0" fitWidth="300.0" pickOnBounds="true" />
                </graphic>
             </Label>
          </children>
       </HBox>
-      <TextField fx:id="searchCommuterText" layoutX="10.0" layoutY="13.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="289.0" promptText="Type Anything You Want" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="5.0" />
+      <TextField fx:id="searchDriverText" layoutX="10.0" layoutY="13.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="289.0" promptText="Type Anything You Want" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="5.0" />
    </children>
 </AnchorPane>

@@ -34,8 +34,8 @@ public class RecordClientImpl implements RecordClient {
         try {
             PreparedStatement state = conn.prepareStatement(query);
             state.setObject(1, record.getRecordDT());
-            state.setObject(3, record.getDustbinId());
-            state.setObject(4, record.getLevel());
+            state.setObject(2, record.getDustbinId());
+            state.setObject(3, record.getLevel());
 
             if(state.executeUpdate()>0){
                 recordList.add(record);
@@ -87,7 +87,7 @@ public class RecordClientImpl implements RecordClient {
     }
 
     //------------------------------------------ Utility Functions ------------------------------------//
-    public ObservableList<Record> retrieveData(String query) throws SQLException, ClassNotFoundException {
+    private ObservableList<Record> retrieveData(String query) throws SQLException, ClassNotFoundException {
         recordList.clear();
         Connection conn = BaseConnection.createConnection().getConnection();
         Statement state = conn.createStatement();
@@ -95,12 +95,12 @@ public class RecordClientImpl implements RecordClient {
 
         while (result.next()) {
             Record record = new Record();
-            record.setRecordDT(result.getString("recordDT"));
+            //record.setRecordDT(result.getString("recordDT"));
             record.setDustbinId(result.getInt("dustbinId"));
             record.setLevel(result.getDouble("level"));
             recordList.add(record);
         }
-        System.out.println("Record List Loaded : " + recordList.size());
+        //System.out.println("Record List Loaded : " + recordList.size());
         return recordList;
     }
 }

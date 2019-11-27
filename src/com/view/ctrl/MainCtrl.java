@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.model.child.Officer;
+import com.model.child.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,27 +81,30 @@ public class MainCtrl {
                 }
             }
         });
-        showContent(String.format(View.PATH, View.JOURNEY_VIEW));
+        showContent(String.format(View.PATH, View.MAP_VIEW));
     }
 
     //---------------------- Nodes Events ------------------------------------//
     @FXML
     public void menuListViewEvent(MouseEvent event) {
         switch((String) menuListView.getSelectionModel().getSelectedItem()){
-            case "Journey" :
-                showContent(String.format(View.PATH, View.JOURNEY_VIEW));
+            case "Home" :
+                //showContent(String.format(View.PATH, View.HOME_VIEW));
                 break;
-            case "Train" :
-                showContent(String.format(View.PATH,View.TRAIN_VIEW));
+            case "Map" :
+                showContent(String.format(View.PATH,View.MAP_VIEW));
                 break;
-            case "Commuters" :
-                showContent(String.format(View.PATH, View.COMMUTER_VIEW));
+            case "Drivers" :
+                showContent(String.format(View.PATH, View.DRIVERS_VIEW));
                 break;
-            case "Booking" :
-                showContent(String.format(View.PATH, View.RESERVATION_VIEW));
+            case "Dustbin" :
+                //showContent(String.format(View.PATH, View.DUSTBIN_ADD));
+                break;
+            case "Graph" :
+                showContent(String.format(View.PATH, View.GRAPH_VIEW));
                 break;
             case "About":
-                //showAbout(String.format(View.PATH, View.ABOUT));
+                //showAbout(String.format(View.PATH, View.ABOUT_VIEW));
         }
     }
 
@@ -144,9 +147,9 @@ public class MainCtrl {
         stage.show();
     }
     
-    public void updateLoginContent(Officer officer){
+    public void updateLoginContent(User user){
         userTypeText.setText("Login As : OFFICER");
-        userNameText.setText("Current User : " + officer.getName());
+        userNameText.setText("Current User : " + user.getUserName());
         loginDateText.setText("Date Logged In : " + new SimpleDateFormat("yyyy-MM-dd").format(new Date()));   
         loginTimeText.setText("Time Logged In : " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));       
     }

@@ -17,14 +17,15 @@ public interface View {
     public static final String MAIN = "main";
     public static final String MESSAGEBOX = "messageBox";
     
-    public static final String JOURNEY_VIEW = "journeyView";
-    public static final String JOURNEY_ADD = "journeyAdd";
-    public static final String TRAIN_VIEW = "trainView";
-    public static final String TRAIN_ADD = "trainAdd";
-    public static final String COMMUTER_VIEW = "commuterView";
-    public static final String RESERVATION_VIEW = "reservationView";
-    public static final String ABOUT = "about";
-    
+    public static final String HOME_VIEW = "homeView";
+    public static final String MAP_VIEW = "mapView";
+    public static final String DRIVERS_VIEW = "driverView";
+    public static final String DRIVERS_ADD = "driversAdd";
+    public static final String DUSTBIN_ADD = "dustbinAdd";
+    public static final String GRAPH_VIEW = "graphView";
+    public static final String ABOUT_VIEW = "aboutView";
+
+
     public static final String IMAGE_ICON = "/com/view/image/Logo.png";
     public static final String IMAGE_ABOUT = "/com/view/image/About.png";
 

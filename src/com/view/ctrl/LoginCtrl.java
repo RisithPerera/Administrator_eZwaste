@@ -1,6 +1,9 @@
 package com.view.ctrl;
 
+import com.base.client.impl.UserClientImpl;
 import com.main.Main;
+
+import com.model.child.User;
 import com.manifest.Message;
 import com.manifest.View;
 
@@ -11,7 +14,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.model.child.Officer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,10 +55,10 @@ public class LoginCtrl implements Initializable {
     @FXML
     void loginBtnEvent(ActionEvent event) {        
         try{
-            Officer officer = OfficerClientImpl.getInstance().getOfficer(usernameText.getText(),passwordText.getText());
-            if( officer != null){
+            User user = UserClientImpl.getInstance().getUser(usernameText.getText(),passwordText.getText());
+            if( user != null){
                 primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource(String.format(View.PATH, View.MAIN)))));
-                MainCtrl.getInstance().updateLoginContent(officer);
+                MainCtrl.getInstance().updateLoginContent(user);
             }else{
                 MessageBoxViewCtrl.display(Message.TITLE,"Incorrect details!");
             }

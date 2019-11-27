@@ -21,7 +21,7 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="30.0" spacing="5.0" style="-fx-background-color: #1C154B;">
                <children>
-                  <Label contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" prefHeight="23.0" text="Railway Management System" textFill="WHITE" HBox.hgrow="ALWAYS">
+                  <Label contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" prefHeight="23.0" text="ezWaste" textFill="WHITE" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="Segoe UI Semibold" size="18.0" />
                      </font>
