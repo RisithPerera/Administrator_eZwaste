@@ -81,7 +81,7 @@ public class MainCtrl {
                 }
             }
         });
-        showContent(String.format(View.PATH, View.MAP_VIEW));
+        showContent(String.format(View.PATH, View.HOME_VIEW));
     }
 
     //---------------------- Nodes Events ------------------------------------//
@@ -89,7 +89,7 @@ public class MainCtrl {
     public void menuListViewEvent(MouseEvent event) {
         switch((String) menuListView.getSelectionModel().getSelectedItem()){
             case "Home" :
-                //showContent(String.format(View.PATH, View.HOME_VIEW));
+                showContent(String.format(View.PATH, View.HOME_VIEW));
                 break;
             case "Map" :
                 showContent(String.format(View.PATH,View.MAP_VIEW));

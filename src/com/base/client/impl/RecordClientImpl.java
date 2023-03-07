@@ -75,13 +75,16 @@ public class RecordClientImpl implements RecordClient {
     @Override
     public ObservableList<Record> getCurrentLevels() throws SQLException, ClassNotFoundException {
 
-        String query = "select dustbinId, level \n" +
-                       "from record\n" +
-                       "WHERE recordDT IN (\n" +
-                       "    SELECT MAX(recordDT)\n" +
-                       "    FROM record\n" +
-                       "    GROUP BY dustbinId\n" +
-                       ")";
+        String query = "select t1.dustbinId, t1.level\n" +
+                "from record t1\n" +
+                "inner join\n" +
+                "(\n" +
+                "  select max(recordDT) mxdate, dustbinId\n" +
+                "  from record\n" +
+                "  group by dustbinId\n" +
+                ") t2\n" +
+                "  on t1.dustbinId = t2.dustbinId\n" +
+                "  and t1.recordDT = t2.mxdate";
 
         return retrieveData(query);
     }

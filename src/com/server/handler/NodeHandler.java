@@ -37,7 +37,6 @@ public class NodeHandler implements Runnable{
                         flag = false;
                         break;
                     }
-
                     String data[] = dataLine.split(",");
                     Record record = new Record();
                     record.setRecordDT(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));

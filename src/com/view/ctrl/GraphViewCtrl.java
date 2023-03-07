@@ -29,16 +29,14 @@ public class GraphViewCtrl implements Initializable {
         dataSeries = new XYChart.Series<>();
         barChart.getData().addAll(dataSeries);
 
-        //Update user interface every 500ms
-        timer = new Timeline(new KeyFrame(Duration.millis(2000), (ActionEvent event) -> {
+        //Update user interface every 3s
+        timer = new Timeline(new KeyFrame(Duration.millis(3000), (ActionEvent event) -> {
             try {
                 currentLevelList = RecordClientImpl.getInstance().getCurrentLevels();
                 dataSeries.getData().clear();
                 for(Record record : currentLevelList) {
-                    dataSeries.getData().add(new XYChart.Data("Dustbin: "+record.getDustbinId(),record.getLevel()));
-
+                    dataSeries.getData().add(new XYChart.Data(""+record.getDustbinId(),record.getLevel()));
                 }
-
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {
@@ -46,9 +44,7 @@ public class GraphViewCtrl implements Initializable {
             }
 
         }));
-
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
-
     }
 }

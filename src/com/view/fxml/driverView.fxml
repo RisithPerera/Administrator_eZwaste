@@ -17,7 +17,7 @@
    <children>
       <HBox layoutX="2.0" layoutY="43.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="43.0">
          <children>
-            <TableView fx:id="driverTable" fixedCellSize="0.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <TableView fx:id="driverTable" fixedCellSize="0.0" prefHeight="600.0" prefWidth="628.0" HBox.hgrow="ALWAYS">
                <columns>
                   <TableColumn fx:id="idCol" maxWidth="75.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="Id" />
                   <TableColumn fx:id="nameCol" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" resizable="false" text="Name" />
@@ -29,11 +29,6 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Label maxHeight="1.7976931348623157E308">
-               <graphic>
-                  <ImageView fitHeight="600.0" fitWidth="300.0" pickOnBounds="true" />
-               </graphic>
-            </Label>
          </children>
       </HBox>
       <TextField fx:id="searchDriverText" layoutX="10.0" layoutY="13.0" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="289.0" promptText="Type Anything You Want" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="5.0" />

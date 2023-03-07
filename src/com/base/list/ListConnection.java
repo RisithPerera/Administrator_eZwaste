@@ -25,6 +25,8 @@ public class ListConnection {
     private final ObservableList<Region> regionList;
     private final ObservableList<User> userList;
 
+    private final BufferQueue bufferQueue;
+
     private ListConnection() {
         this.driverList = FXCollections.observableArrayList();
         this.dustbinList = FXCollections.observableArrayList();
@@ -32,7 +34,7 @@ public class ListConnection {
         this.recordList = FXCollections.observableArrayList();
         this.regionList = FXCollections.observableArrayList();
         this.userList = FXCollections.observableArrayList();
-
+        this.bufferQueue = new BufferQueue();
     }
 
     public static ListConnection getInstance() {
@@ -48,5 +50,5 @@ public class ListConnection {
     public ObservableList<Record> getRecordList() {return recordList;}
     public ObservableList<Region> getRegionList() {return regionList;}
     public ObservableList<User> getUserList() {return userList;}
-
+    public BufferQueue getBufferQueue(){return bufferQueue;}
 }

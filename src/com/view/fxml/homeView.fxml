@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -16,10 +18,332 @@
 
 <AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="960.0" style="-fx-background-color: #75F7EB;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.view.ctrl.HomeViewCtrl">
    <children>
-      <Label layoutX="384.0" layoutY="188.0" prefHeight="104.0" prefWidth="193.0" text="Home">
-         <font>
-            <Font size="71.0" />
-         </font>
-      </Label>
+      <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" prefHeight="706.0" prefWidth="1510.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="8.0" layoutY="14.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #3B377E;" text="Gateway 1" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                        <LineChart fx:id="lineChart1" animated="false" layoutX="8.0" layoutY="14.0" prefHeight="267.0" prefWidth="500.0" style="-fx-background-color: #D8E1FF;" VBox.vgrow="ALWAYS">
+                           <xAxis>
+                              <CategoryAxis animated="false" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis animated="false" autoRanging="false" minorTickCount="10" side="LEFT" upperBound="110.0" />
+                           </yAxis>
+                        </LineChart>
+                        <Label fx:id="hValueLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" prefHeight="60.0" style="-fx-background-color: #3B377E;" text="Average Level : 78.45%" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #729b2c;" text="Gateway 2" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                        <LineChart fx:id="lineChart2" animated="false" layoutX="18.0" layoutY="24.0" prefHeight="267.0" prefWidth="500.0" style="-fx-background-color: #D8E1FF;" VBox.vgrow="ALWAYS">
+                           <xAxis>
+                              <CategoryAxis animated="false" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis autoRanging="false" side="LEFT" upperBound="110.0" />
+                           </yAxis>
+                        </LineChart>
+                        <Label fx:id="tValueLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" prefHeight="60.0" style="-fx-background-color: #729b2c;" text="Average Level : 23.10%" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #912b2b;" text="Gateway 3" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                        <LineChart fx:id="lineChart3" animated="false" layoutX="28.0" layoutY="34.0" prefHeight="267.0" prefWidth="500.0" style="-fx-background-color: #D8E1FF;" VBox.vgrow="ALWAYS">
+                           <xAxis>
+                              <CategoryAxis animated="false" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis autoRanging="false" side="LEFT" upperBound="110.0" />
+                           </yAxis>
+                        </LineChart>
+                        <Label fx:id="mValueLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" prefHeight="60.0" style="-fx-background-color: #912b2b;" text="Average Level : 54.67%" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="300.0" style="-fx-background-color: #D8E1FF;">
+               <children>
+                  <HBox spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <VBox maxWidth="1.7976931348623157E308" prefHeight="240.0" prefWidth="264.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="35.0" onMouseClicked="#autoSolveEvent" prefHeight="35.0" style="-fx-background-color: #000000;" text="Overall Statistics" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane alignment="CENTER_LEFT" layoutX="8.0" layoutY="35.0" maxWidth="1.7976931348623157E308" prefHeight="200.0">
+                                 <children>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Total Dustbin" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Current Drivers" textFill="#3b377e" GridPane.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Areas" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nameLabel" text=":" textFill="#3b377e" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="addressLabel" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ticketLabel" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Total Waste" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ticketLabel1" layoutX="140.0" layoutY="93.0" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="10" textFill="#3b377e" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="19.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="3" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="56.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="150" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="2000KG" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="134.0" prefWidth="134.0" />
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="46.0" minWidth="0.0" prefWidth="4.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="90.0" prefWidth="127.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="445.0" layoutY="6.0" maxWidth="1.7976931348623157E308" spacing="5.0" AnchorPane.bottomAnchor="52.0" AnchorPane.topAnchor="6.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER" layoutX="377.0" layoutY="14.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #000000;" text="Control Status" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="363.0" layoutY="86.0" spacing="5.0">
+                                 <children>
+                                    <Label layoutX="363.0" layoutY="104.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #3B377E;" text="Gateway No" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI Semibold" size="15.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField layoutX="854.0" layoutY="86.0" minHeight="50.0" prefHeight="50.0" promptText="Type The ID" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="651.0" layoutY="74.0" spacing="5.0">
+                                 <children>
+                                    <Label layoutX="651.0" layoutY="74.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #729b2c;" text="Dustbin No" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI Semibold" size="15.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField layoutX="864.0" layoutY="96.0" minHeight="50.0" prefHeight="50.0" promptText="Type The ID" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="509.0" layoutY="76.0" spacing="5.0">
+                                 <children>
+                                    <Label layoutX="509.0" layoutY="175.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="180.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #912b2b;" text="Contact Driver" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI Semibold" size="15.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField layoutX="844.0" layoutY="76.0" minHeight="50.0" prefHeight="50.0" promptText="Type The ID" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                              <HBox spacing="5.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="215.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="35.0" onMouseClicked="#autoSolveEvent" prefHeight="35.0" prefWidth="66.0" style="-fx-background-color: #1C154B;" text="Lock" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI Semibold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #1C154B;" text="Unlock" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI Semibold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="839.0" layoutY="5.0" maxWidth="1.7976931348623157E308" prefHeight="240.0" prefWidth="273.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="35.0" prefHeight="35.0" style="-fx-background-color: #000000;" text="System Status" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane alignment="CENTER_LEFT" layoutX="8.0" layoutY="35.0" prefHeight="200.0">
+                                 <children>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="IP" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="User" textFill="#3b377e" GridPane.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Authentication" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nameLabel1" text=":" textFill="#3b377e" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="addressLabel1" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ticketLabel1" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="139.0" text="Port" textFill="#3b377e" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="ticketLabel11" layoutX="140.0" layoutY="93.0" text=":" textFill="#3b377e" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="fanStatusText" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="Kamal" textFill="#3b377e" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="19.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="Guest" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="pumpStatusText" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="56.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="192.168.8.101" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="170.0" layoutY="93.0" maxWidth="1.7976931348623157E308" prefHeight="17.0" text="3030" textFill="#3b377e" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Segoe UI" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="28.0" minWidth="0.0" prefWidth="7.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>
