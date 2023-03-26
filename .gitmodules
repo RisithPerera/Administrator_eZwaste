@@ -1,0 +1,3 @@
+[submodule "Mobile_App"]
+	path = Mobile_App
+	url = https://github.com/RisithPerera/Android-eZWaste.git
